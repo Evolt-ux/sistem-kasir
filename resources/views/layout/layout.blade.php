@@ -130,9 +130,9 @@
                         <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="pages-profile.html" aria-expanded="false">
                                 <i class="mr-3 fa fa-user" aria-hidden="true"></i><span class="hide-menu">Profile</span></a>
                         </li>
-                        <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="penjualan.html" aria-expanded="false"><i class="mr-3 fas fa-shopping-cart" aria-hidden="true"></i><span class="hide-menu">Penjualan</span></a></li>
-                        <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="icon-fontawesome.html" aria-expanded="false"><i class="mr-3 fas fa-cart-arrow-down" aria-hidden="true"></i><span class="hide-menu">Pembelian</span></a></li>
-                        <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="map-google.html" aria-expanded="false"><i class="mr-3 fas fa-database" aria-hidden="true"></i><span class="hide-menu">barang</span></a></li>
+                        <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="/penjualan" aria-expanded="false"><i class="mr-3 fas fa-shopping-cart" aria-hidden="true"></i><span class="hide-menu">Penjualan</span></a></li>
+                        <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="/pembelian" aria-expanded="false"><i class="mr-3 fas fa-cart-arrow-down" aria-hidden="true"></i><span class="hide-menu">Pembelian</span></a></li>
+                        <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="/barang" aria-expanded="false"><i class="mr-3 fas fa-database" aria-hidden="true"></i><span class="hide-menu">barang</span></a></li>
                     </ul>
 
                 </nav>
@@ -153,12 +153,12 @@
             <div class="page-breadcrumb">
                 <div class="row align-items-center">
                     <div class="col-md-6 col-8 align-self-center">
-                        <h3 class="page-title mb-0 p-0">Dashboard</h3>
+                        <h3 class="page-title mb-0 p-0">@yield('title')</h3>
                         <div class="d-flex align-items-center">
                             <nav aria-label="breadcrumb">
                                 <ol class="breadcrumb">
-                                    <li class="breadcrumb-item"><a href="#">Home</a></li>
-                                    <li class="breadcrumb-item active" aria-current="page">Dashboard</li>
+                                    <li class="breadcrumb-item"><a href="/">Home</a></li>
+                                    <li class="breadcrumb-item active" aria-current="page">@yield('title')</li>
                                 </ol>
                             </nav>
                         </div>
@@ -388,22 +388,22 @@
     <!-- ============================================================== -->
     <!-- All Jquery -->
     <!-- ============================================================== -->
-    <script src="../assets/plugins/jquery/dist/jquery.min.js"></script>
+    <script src="{!! asset('assets/plugins/jquery/dist/jquery.min.js') !!}"></script>
     <!-- Bootstrap tether Core JavaScript -->
-    <script src="../assets/plugins/popper.js/dist/umd/popper.min.js"></script>
-    <script src="../assets/plugins/bootstrap/dist/js/bootstrap.min.js"></script>
-    <script src="{!! asset('js/app-style-switcher.js') !!}"></script>
+    <script src="{!! asset('assets/plugins/popper.js/dist/umd/popper.min.js') !!}"></script>
+    <script src="{!! asset('assets/plugins/bootstrap/dist/js/bootstrap.min.js') !!}"></script>
+    <script src="{!! asset('assets/js/app-style-switcher.js') !!}"></script>
     <!--Wave Effects -->
-    <script src="{!! asset('js/waves.js') !!}"></script>
+    <script src="{!! asset('assets/js/waves.js') !!}"></script>
     <!--Menu sidebar -->
-    <script src="{!! asset('js/sidebarmenu.js') !!}"></script>
+    <script src="{!! asset('assets/js/sidebarmenu.js') !!}"></script>
     <!--Custom JavaScript -->
-    <script src="{!! asset('js/custom.js') !!}"></script>
+    <script src="{!! asset('assets/js/custom.js') !!}"></script>
     <!--This page JavaScript -->
     <!--flot chart-->
     <script src="{!! asset('assets/plugins/flot/jquery.flot.js') !!}"></script>
     <script src="{!! asset('assets/plugins/flot.tooltip/js/jquery.flot.tooltip.min.js') !!}"></script>
-    <script src="{!! asset('js/pages/dashboards/dashboard1.js') !!}"></script>
+    <script src="{!! asset('assets/js/pages/dashboards/dashboard1.js') !!}"></script>
 </body>
 
 </html>

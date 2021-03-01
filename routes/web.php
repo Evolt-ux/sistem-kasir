@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\C_penjualan;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -20,3 +21,4 @@ Route::get('/', function () {
 Route::get('/siswa', function () {
     return view('siswa');
 });
+Route::get('/penjualan', [C_penjualan::class, 'index']);
