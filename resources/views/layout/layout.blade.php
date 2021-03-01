@@ -1,4 +1,3 @@
-@
 <!DOCTYPE html>
 <html dir="ltr" lang="en">
 
@@ -15,7 +14,7 @@
     <!-- Favicon icon -->
     <link rel="icon" type="image/png" sizes="16x16" href="../assets/images/favicon.png">
     <!-- Custom CSS -->
-    <link href="assets/plugins/chartist/dist/chartist.min.css" rel="stylesheet">
+    <link href="{!! asset('assets/plugins/chartist/dist/chartist.min.css')!!}" rel="stylesheet">
     <!-- Custom CSS -->
     <link href="{!! asset('assets/css/style.min.css') !!}" rel="stylesheet">
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -393,18 +392,18 @@
     <!-- Bootstrap tether Core JavaScript -->
     <script src="../assets/plugins/popper.js/dist/umd/popper.min.js"></script>
     <script src="../assets/plugins/bootstrap/dist/js/bootstrap.min.js"></script>
-    <script src="js/app-style-switcher.js"></script>
+    <script src="{!! asset('js/app-style-switcher.js') !!}"></script>
     <!--Wave Effects -->
-    <script src="js/waves.js"></script>
+    <script src="{!! asset('js/waves.js') !!}"></script>
     <!--Menu sidebar -->
-    <script src="js/sidebarmenu.js"></script>
+    <script src="{!! asset('js/sidebarmenu.js') !!}"></script>
     <!--Custom JavaScript -->
-    <script src="js/custom.js"></script>
+    <script src="{!! asset('js/custom.js') !!}"></script>
     <!--This page JavaScript -->
     <!--flot chart-->
-    <script src="../assets/plugins/flot/jquery.flot.js"></script>
-    <script src="../assets/plugins/flot.tooltip/js/jquery.flot.tooltip.min.js"></script>
-    <script src="js/pages/dashboards/dashboard1.js"></script>
+    <script src="{!! asset('assets/plugins/flot/jquery.flot.js') !!}"></script>
+    <script src="{!! asset('assets/plugins/flot.tooltip/js/jquery.flot.tooltip.min.js') !!}"></script>
+    <script src="{!! asset('js/pages/dashboards/dashboard1.js') !!}"></script>
 </body>
 
 </html>
