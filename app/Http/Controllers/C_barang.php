@@ -44,4 +44,20 @@ class C_barang extends Controller
       ]);
         return redirect('/barang');
     }
+
+    //update barang
+    public function ubah_barang()
+    {
+      $tambah = Barang::where('ID', $request->ID)->get();
+      return view('/ubahbarang', compact('tambah'));
+    }
+
+    public function store_update(Request $request)
+    {
+      $tambah = Barang::all();
+      StokPupuk::where('nama_pupuk', $request->nama_pupuk)->increment(
+          'jumlah_stok', $request->jumlah_stok
+      );
+        return redirect('/StokPupuk');
+    }
 }

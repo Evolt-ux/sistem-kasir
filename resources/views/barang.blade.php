@@ -24,15 +24,15 @@
                     </thead>
                     <tbody>
                     @foreach($tambah as $T)
-                          <tr>
-                            <td>{{$T->id}}</td>
-                            <td>{{$T->NamaBarang}}</td>
-                            <td>{{$T->Jumlah}}</td>
-                            <td>Rp{{$T->Harga}}</td>
-                            <td>{{$T->Diskon}}</td>
-                            <td>{{$T->Kadaluarsa}}</td>
-                            <td><a href="/barang/edit"><i class="far fa-edit"></i></a>&nbsp;&nbsp;<a href="http://"><i class="fas fa-trash-alt" style="color: red"></i></a></td>
-                          </tr>
+                        <tr>
+                        <td>{{$T->id}}</td>
+                        <td>{{$T->NamaBarang}}</td>
+                        <td>{{$T->Jumlah}}</td>
+                        <td>Rp{{$T->Harga}}</td>
+                        <td>{{$T->Diskon}}</td>
+                        <td>{{$T->Kadaluarsa}}</td>
+                        <td><a href="/ubahbarang/{{$T->ID}}"><i class="far fa-edit"></i></a>&nbsp;&nbsp;<a href="http://"><i class="fas fa-trash-alt" style="color: red"></i></a></td>
+                        </tr>
                     </tbody>
                     @endforeach
                 </table>
