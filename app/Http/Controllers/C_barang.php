@@ -1,84 +1,49 @@
 <?php
 
 namespace App\Http\Controllers;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\DB;
+use App\Order;
+use Carbon\Carbon;
+use App\Models\Barang;
+use File;
 
 use Illuminate\Http\Request;
 
 class C_barang extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
+    //lihat barang
+    public function index_barang()
     {
-        return view('barang');
+      $tambah = Barang::all();
+      return view('/barang', compact('tambah'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
+    //tambah barang
+    public function tambah_barang()
     {
-        //
+      $tambah = Barang::all();
+      return view('/tambahbarang', compact('tambah'));
     }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
+    public function store_barang(Request $request)
     {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
+      $tambah = Barang::all();
+      $diskon = $request->Diskon/100;
+      dd($diskon);
+      $this->validate($request,[
+        'NamaBarang'    => ['required'],
+        'Jumlah'        => ['required'],
+        'Harga'         => ['required'],
+        'Diskon'        => ['required'],
+        'Kadaluarsa'    => ['required']
+      ]);
+      Barang::create([
+          'Barang'         => $request->Barang,
+          'Jumlah'         => $request->Jumlah,
+          'Harga'          => $request->Harga,
+          'Diskon'         => $request->Diskon,
+          'Kadaluarsa'     => $request->Kadaluarsa
+      ]);
+        return redirect('/barang');
     }
 }

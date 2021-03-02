@@ -9,7 +9,7 @@
         <div class="card">
             <div class="card-body">
                 <h3 class="card-title">Kelola Barang</h3>
-                <button class="btn btn-info mb-2 ms-2"><i class="fas fa-plus"></i>Tambah Barang</button>
+                <a href="{{url('/tambahbarang')}}" class="btn btn-info mb-2 ms-2"><i class="fas fa-plus"></i> Tambah Barang</a>
                 <table class="table table-hover">
                     <thead>
                         <tr>
@@ -23,16 +23,18 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td>1</td>
-                            <td>Beras 25Kg</td>
-                            <td>10</td>
-                            <td>250.000</td>
-                            <td>0%</td>
-                            <td>12 Desember 2021</td>
+                    @foreach($tambah as $T)
+                          <tr>
+                            <td>{{$T->id}}</td>
+                            <td>{{$T->NamaBarang}}</td>
+                            <td>{{$T->Jumlah}} Box</td>
+                            <td>Rp{{$T->Harga}}</td>
+                            <td>{{$T->Diskon}}%</td>
+                            <td>{{$T->Kadaluarsa}}</td>
                             <td><a href="/barang/edit"><i class="far fa-edit"></i></a>&nbsp;&nbsp;<a href="http://"><i class="fas fa-trash-alt" style="color: red"></i></a></td>
-                        </tr>
+                          </tr>
                     </tbody>
+                    @endforeach
                 </table>
             </div>
         </div>
