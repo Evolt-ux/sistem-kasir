@@ -45,9 +45,36 @@ class C_barang extends Controller
     return redirect('/barang');
   }
 
+  //ubah barang
   public function edit($Barang)
   {
     $Barang = Barang::where('id', $Barang)->first();
     return view('ubahbarang', compact('Barang'));
   }
+
+  public function update(Request $request, Barang $Barang)
+  {
+      $request->validate([
+        'NamaBarang'    => ['required'],
+        'Jumlah'        => ['required'],
+        'Harga'         => ['required'],
+        'Diskon'        => ['required'],
+        'Kadaluarsa'    => ['required']
+      ]);
+
+      $Barang->update($request->all());
+
+      return redirect()->route('barang.index')
+                      ->with('success','Barang updated successfully');
+  }
+    
+  //hapus barang
+  public function destroy($id)
+    {
+        $Barang = Barang::findOrFail($id);
+        $Barang->delete();
+ 
+        return redirect()->route('barang.index')
+                        ->with('success','Barang deleted successfully');
+    }
 }

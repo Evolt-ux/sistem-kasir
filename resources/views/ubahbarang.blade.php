@@ -19,8 +19,9 @@
           </div>
           @endif
           <br>
-          <form action="{{url('/tambahbarang/proses')}}" method="POST">
+          <form action="{{ route('barang.update',$Barang->id) }}" method="POST">
             @csrf
+            @method('PUT')
             <div class="form-group">
               <label for="tambahbarang" style="font-size:12pt;">Nama Barang</label><br>
               <input type="text" class="form-control" value="{{$Barang->NamaBarang}}" name="NamaBarang">
@@ -41,7 +42,7 @@
               <label for="tambahbarang" style="font-size:12pt;">Kadaluarsa</label><br>
               <input type="date" class="form-control" value="{{$Barang->Kadaluarsa}}" name="Kadaluarsa">
             </div>
-            <button type="submit" class="btn btn-primary">Submit</button>
+            <button type="submit" class="btn btn-primary">Update</button>
             <a href="{{url('/barang')}}" class="btn btn-info">Batal</a>
           </form>
         </div>
