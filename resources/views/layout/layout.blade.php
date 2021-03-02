@@ -43,28 +43,28 @@
         <!-- Topbar header - style you can find in pages.scss -->
         <!-- ============================================================== -->
         <header class="topbar" data-navbarbg="skin6">
-            <nav class="navbar top-navbar navbar-expand-md navbar-dark">
+            <nav class="navbar top-navbar navbar-expand-md navbar-dark" style="background-color: #9e7cf4;">
                 <div class="navbar-header" data-logobg="skin6">
                     <!-- ============================================================== -->
                     <!-- Logo -->
                     <!-- ============================================================== -->
-                    <a class="navbar-brand justify-content-center" href="/">
+                    <a class="navbar-brand justify-content-center" href="/" style="background-color: #9d7bf3;">
                         <!-- Logo icon -->
                         <b class="logo-icon">
                             <!--You can put here icon as well // <i class="wi wi-sunset"></i> //-->
                             <!-- Dark Logo icon -->
 
-                            <!-- <img src="../assets/images/logo-icon.png" alt="homepage" class="dark-logo" /> -->
+                            <img src="../assets/images/logo-text.png" alt="homepage" class="dark-logo">
 
                         </b>
                         <!--End Logo icon -->
                         <!-- Logo text -->
-                        <span class="logo-text">
-                            <h1>POS Toko kita</h1>
-                            <!-- dark Logo text -->
-                            <!-- <img src="../assets/images/logo-text.png" alt="homepage" class="dark-logo" /> -->
+                        <!-- <span class="logo-text"> -->
 
-                        </span>
+                        <!-- dark Logo text -->
+                        <!-- <img src="../assets/images/logo-text.png" alt="homepage" class="dark-logo" /> -->
+
+                        <!-- </span> -->
                     </a>
                     <!-- ============================================================== -->
                     <!-- End Logo -->
@@ -108,7 +108,7 @@
                         <li class="nav-item dropdown">
                             <div class="dropdown show">
                                 <a class=" dropdown-toggle  " href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    <p class="mt-3 mr-5" style="">Budi Karya</p>
+                                    <p class="h6 mt-2 mr-5"><span style="color:white; border:solid 2px; padding: 8px 10px; border-radius: 20px;">Budi Karya Budi Karya</span></p>
                                 </a>
 
                                 <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
@@ -162,7 +162,7 @@
             <div class="page-breadcrumb">
                 <div class="row align-items-center">
                     <div class="col-md-6 col-8 align-self-center">
-                        <h3 class="page-title mb-0 p-0">@yield('title')</h3>
+                        <h3 class="page-title mb-0 p-0" style="color: #9e7cf4;">@yield('title')</h3>
                         <div class="d-flex align-items-center">
                             <nav aria-label="breadcrumb">
                                 <ol class="breadcrumb">
