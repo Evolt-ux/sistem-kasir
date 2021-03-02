@@ -9,7 +9,7 @@
         <div class="card">
             <div class="card-body">
                 <h3 class="card-title">Kelola Barang</h3>
-                <a href="{{url('/tambahbarang')}}" class="btn btn-info mb-2 ms-2"><i class="fas fa-plus"></i> Tambah Barang</a>
+                <a href="{{ route('barang.create') }}" class="btn btn-info mb-2 ms-2"><i class="fas fa-plus"></i> Tambah Barang</a>
                 <table class="table table-hover">
                     <thead>
                         <tr>
@@ -23,15 +23,15 @@
                         </tr>
                     </thead>
                     <tbody>
-                    @foreach($tambah as $T)
+                        @foreach($tambah as $T)
                         <tr>
-                        <td>{{$T->id}}</td>
-                        <td>{{$T->NamaBarang}}</td>
-                        <td>{{$T->Jumlah}}</td>
-                        <td>Rp{{$T->Harga}}</td>
-                        <td>{{$T->Diskon}}</td>
-                        <td>{{$T->Kadaluarsa}}</td>
-                        <td><a href="/ubahbarang/{{$T->id}}"><i class="far fa-edit"></i></a>&nbsp;&nbsp;<a href="http://"><i class="fas fa-trash-alt" style="color: red"></i></a></td>
+                            <td>{{$T->id}}</td>
+                            <td>{{$T->NamaBarang}}</td>
+                            <td>{{$T->Jumlah}}</td>
+                            <td>Rp{{$T->Harga}}</td>
+                            <td>{{$T->Diskon}}</td>
+                            <td>{{$T->Kadaluarsa}}</td>
+                            <td><a href="{{ route('barang.edit',$T->id) }}"><i class="far fa-edit"></i></a>&nbsp;&nbsp;<a href="http://"><i class="fas fa-trash-alt" style="color: red"></i></a></td>
                         </tr>
                     </tbody>
                     @endforeach

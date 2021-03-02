@@ -19,7 +19,7 @@
           </div>
           @endif
           <br>
-          <form action="{{url('/tambahbarang/proses')}}" method="POST">
+          <form action="{{ route('barang.store') }}" method="POST">
             @csrf
             <div class="form-group">
               <label for="tambahbarang" style="font-size:12pt;">Nama Barang</label><br>
