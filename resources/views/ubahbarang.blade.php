@@ -21,7 +21,6 @@
                                             <br>
                     <form action="{{url('/tambahbarang/proses')}}" method="POST" >
                         @csrf
-                        
                         <div class="form-group">
                           <label for="tambahbarang" style="font-size:12pt;">Nama Barang</label><br>
                           <input type="text" class="form-control" name="NamaBarang">
