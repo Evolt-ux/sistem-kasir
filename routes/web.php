@@ -17,8 +17,5 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('home');
 });
-
-Route::get('/siswa', function () {
-    return view('siswa');
-});
 Route::get('/penjualan', [C_penjualan::class, 'index']);
+Route::get('/barang', [App\Http\Controllers\C_barang::class, 'index']);

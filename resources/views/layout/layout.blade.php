@@ -106,9 +106,18 @@
                         <!-- User profile and search -->
                         <!-- ============================================================== -->
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle waves-effect waves-dark" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="../assets/images/users/1.jpg" alt="user" class="profile-pic mr-2">Markarn
-                                Doe</a>
+                            <div class="dropdown show">
+                                <a class=" dropdown-toggle  " href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <p class="mt-3 mr-5">Budi Karya</p>
+                                </a>
+
+                                <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                    <a class="dropdown-item" href="#">Profil</a>
+                                    <a class="dropdown-item" href="#">Logout</a>
+                                </div>
+                            </div>
                         </li>
+
                     </ul>
                 </div>
             </nav>
