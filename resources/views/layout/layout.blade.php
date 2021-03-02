@@ -54,7 +54,7 @@
                             <!--You can put here icon as well // <i class="wi wi-sunset"></i> //-->
                             <!-- Dark Logo icon -->
 
-                            <img src="../assets/images/logo-text.png" alt="homepage" class="dark-logo">
+                            <img src="{!! asset('assets/images/logo-text.png') !!}" alt="homepage" class="dark-logo">
 
                         </b>
                         <!--End Logo icon -->
