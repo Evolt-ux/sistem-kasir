@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 <?php
 
 use App\Http\Controllers\C_barang;
@@ -23,3 +24,5 @@ Route::get('/penjualan', [C_penjualan::class, 'index']);
 Route::get('/barang/{id}/edit', [App\Http\Controllers\C_barang::class, 'edit']);
 Route::get('/pembelian', [C_pembelian::class, 'index']);
 Route::resource('barang', C_barang::class);
+=======
+>>>>>>> Stashed changes
