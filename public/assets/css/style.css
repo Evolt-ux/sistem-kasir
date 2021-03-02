@@ -9172,7 +9172,7 @@ Table-Jsgrid table
     .page-breadcrumb .breadcrumb .breadcrumb-item + .breadcrumb-item::before {
       content: "\e649";
       font-family: themify;
-      color: #ced4da;
+      color: #dd8be0;
       font-size: 11px; }
 
 /*******************
