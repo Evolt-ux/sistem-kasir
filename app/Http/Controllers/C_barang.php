@@ -48,7 +48,7 @@ class C_barang extends Controller
     //update barang
     public function ubah_barang()
     {
-      $tambah = Barang::where('ID', $request->ID)->get();
+      $tambah = Barang::where('id', $request->id)->get();
       return view('/ubahbarang', compact('tambah'));
     }
 

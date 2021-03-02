@@ -20,12 +20,9 @@ Route::get('/', function () {
 });
 Route::get('/penjualan', [C_penjualan::class, 'index']);
 Route::get('/barang', [App\Http\Controllers\C_barang::class, 'index_barang']);
-<<<<<<< HEAD
 Route::get('/tambahbarang',[App\Http\Controllers\C_barang::class, 'tambah_barang']);
 Route::post('/tambahbarang/proses',[App\Http\Controllers\C_barang::class, 'store_barang']);
 Route::get('/ubahbarang',[App\Http\Controllers\C_barang::class, 'ubah_barang']);
-=======
 Route::get('/tambahbarang', [App\Http\Controllers\C_barang::class, 'tambah_barang']);
 Route::post('/tambahbarang/proses', [App\Http\Controllers\C_barang::class, 'store_barang']);
 Route::get('/pembelian', [C_pembelian::class, 'index']);
->>>>>>> 897f04944bca1c6ebcb4bc6dcf2a6ddcaa117d6c
