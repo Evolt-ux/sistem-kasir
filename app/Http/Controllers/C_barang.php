@@ -28,8 +28,6 @@ class C_barang extends Controller
     public function store_barang(Request $request)
     {
       $tambah = Barang::all();
-      $diskon = $request->Diskon/100;
-      dd($diskon);
       $this->validate($request,[
         'NamaBarang'    => ['required'],
         'Jumlah'        => ['required'],
@@ -38,10 +36,10 @@ class C_barang extends Controller
         'Kadaluarsa'    => ['required']
       ]);
       Barang::create([
-          'Barang'         => $request->Barang,
+          'NamaBarang'     => $request->NamaBarang,
           'Jumlah'         => $request->Jumlah,
           'Harga'          => $request->Harga,
-          'Diskon'         => $request->Diskon,
+          'Diskon'         => $request->Diskon/100,
           'Kadaluarsa'     => $request->Kadaluarsa
       ]);
         return redirect('/barang');
