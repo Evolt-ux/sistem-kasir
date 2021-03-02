@@ -50,7 +50,7 @@ class C_barang extends Controller
     {
       $tambah = Barang::all();
       Barang::where('id', $request->id)->get();
-      return view('/ubahbarang/{{$T->id}}', compact('tambah'));
+      return view('/ubahbarang/{{$id}}', compact('tambah'));
     }
 
     public function store_update(Request $request)
