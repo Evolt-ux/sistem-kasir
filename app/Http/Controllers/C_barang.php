@@ -71,7 +71,7 @@ class C_barang extends Controller
   //hapus barang
   public function destroy($Barang)
     {
-        $Barang =Barang::where('id',$Barang)->first();
+        $Barang = Barang::where('id',$Barang)->first();
         $Barang->delete();
  
         return redirect()->route('barang.index')
