@@ -7,46 +7,49 @@
     <div class="col-sm-6">
         <div class="card">
             <div class="card-body">
-                <div class="row" style="padding: 2px;">
-                    <div class="col-3">
-                        <span style="background-color: #e999df;font-size: 80px; border-radius:7px; color: white;vertical-align:middle;">
-                            <i class="fas fa-chart-line" style="padding: 6px;"></i>
-                        </span>
-                    </div>
-                    <div class="col-7" style="margin:auto auto auto;">
-                        <p>Profit yang diterapkan :</p>
-                        <h1>50 %</h1>
-                    </div>
-                    <div class="col-2">
-                        <div class="row">
-                            <i class="fas fa-plus"></i>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-3">
+                            <span class="bg-primary" style="font-size: 80px; border-radius:7px; color: white;vertical-align:middle;">
+                                <i class="fas fa-chart-line" style="padding: 6px;"></i>
+                            </span>
                         </div>
-                        <div class="row">
-                            <i class="far fa-edit"></i>
+                        <div class="col-7">
+                            <div class="row m-auto" style="margin:auto;">
+                                <p class="h6 mt-3">Profit yang diterapkan :</p>
+                                <h1 class="text-primary font-weight-bold display-3">50 %</h1>
+                            </div>
+                        </div>
+                        <div class="col-2" style="margin: auto;">
+                            <div class="row mb-2">
+                                <a href=""><i class="text-primary fas fa-plus" style="border: solid 1px;padding:6px 7px;font-size:25px; border-radius: 6px;"></i></a>
+                            </div>
+                            <div class="row">
+                                <a href=""><i class="text-primary far fa-edit" style="border: solid 1px;padding:4px;font-size:25px; border-radius: 6px;"></i></a>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
-<!-- search barang end -->
-<div class="row">
-    <!-- Column -->
-    <div class="col-sm-7">
+    <div class="col-sm-6">
         <div class="card">
             <div class="card-body">
                 <h4 class="card-title">Transaction</h4>
                 <table class="table table-hover">
                     <thead>
                         <tr>
-                            <th scope="col">ID</th>
-                            <th scope="col">Product Name</th>
-                            <th scope="col">Price</th>
-                            <th scope="col">Qty</th>
-                            <th scope="col">Disc %</th>
-                            <th scope="col">Total</th>
+                            <th scope="col" rowspan="2">ID</th>
+                            <th scope="col" colspan="2">Periode</th>
+                            <th scope="col" rowspan="2">Qty</th>
+                            <th scope="col" rowspan="2">Disc</th>
+                            <th scope="col" rowspan="2">Total</th>
                             <th scope="col">-</th>
+                        </tr>
+                        <tr>
+                            <th scope="col">Awal</th>
+                            <th scope="col">Akhir</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -57,13 +60,17 @@
                             <td>1</td>
                             <td>0%</td>
                             <td>10.000.00</td>
-                            <td><i class="fas fa-trash-alt"></i></td>
                         </tr>
                     </tbody>
                 </table>
             </div>
         </div>
     </div>
+</div>
+<!-- search barang end -->
+<div class="row">
+    <!-- Column -->
+
     <!-- Column -->
     <!-- Column -->
     <div class="col-sm-5">
