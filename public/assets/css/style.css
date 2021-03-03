@@ -19794,3 +19794,8 @@ File: scss
         display: block !important;
     }
 }
+
+.carddb span {
+    padding: 5px;
+    background: #e999df;
+}

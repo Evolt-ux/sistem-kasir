@@ -7,22 +7,25 @@
     <div class="col-sm-6">
         <div class="card">
             <div class="card-body">
-                <form>
-                    <div class="form-row align-items-center">
-                        <div class="col">
-                            <label class="sr-only" for="inlineFormInputGroup">Username</label>
-                            <div class="input-group">
-                                <div class="input-group-prepend">
-                                    <div class="input-group-text"><i class="fas fa-shopping-cart" aria-hidden="true"></i></div>
-                                </div>
-                                <input type="text" class="form-control" id="inlineFormInputGroup" placeholder="Cari nama atau kode produk">
-                            </div>
+                <div class="row" style="padding: 2px;">
+                    <div class="col-3">
+                        <span style="background-color: #e999df;font-size: 80px; border-radius:7px; color: white;vertical-align:middle;">
+                            <i class="fas fa-chart-line" style="padding: 6px;"></i>
+                        </span>
+                    </div>
+                    <div class="col-7" style="margin:auto auto auto;">
+                        <p>Profit yang diterapkan :</p>
+                        <h1>50 %</h1>
+                    </div>
+                    <div class="col-2">
+                        <div class="row">
+                            <i class="fas fa-plus"></i>
                         </div>
-                        <div class="col-auto">
-                            <button type="submit" class="btn btn-info">Submit</button>
+                        <div class="row">
+                            <i class="far fa-edit"></i>
                         </div>
                     </div>
-                </form>
+                </div>
             </div>
         </div>
     </div>
@@ -66,7 +69,7 @@
     <div class="col-sm-5">
         <div class="card">
             <div class="card-body">
-                <h4 class="card-title">Nota</h4>
+                <h4 class="card-title">Profit yang diterapkan</h4>
                 <div class="text-right">
                     <h2 class="font-light m-b-0"><i class="ti-arrow-up text-info"></i> $5,000</h2>
                     <span class="text-muted">Todays Income</span>
