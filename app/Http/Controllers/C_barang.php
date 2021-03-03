@@ -35,6 +35,7 @@ class C_barang extends Controller
       'Kadaluarsa'    => ['required']
     ]);
     Barang::create([
+      'Tanggal'        => date('Y-m-d H:i:s'),
       'NamaBarang'     => $request->NamaBarang,
       'Jumlah'         => $request->Jumlah,
       'Harga'          => $request->Harga,

@@ -14,6 +14,7 @@
                     <thead>
                         <tr>
                             <th scope="col">ID</th>
+                            <th scope="col">Tanggal</th>
                             <th scope="col">Nama Barang</th>
                             <th scope="col">Jumlah</th>
                             <th scope="col">Harga</th>
@@ -25,6 +26,7 @@
                         @foreach($tambah as $T)
                         <tr>
                             <td>{{$T->id}}</td>
+                            <td>{{$T->Tanggal}}</td>
                             <td>{{$T->NamaBarang}}</td>
                             <td>{{$T->Jumlah}}</td>
                             <td>Rp{{$T->Harga}}</td>

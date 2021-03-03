@@ -8,7 +8,7 @@
     <div class="col-sm-6">
         <div class="card">
             <div class="card-body">
-                <h3 class="card-title">Tambah Barang</h3>
+                <h3 class="card-title">Pembelian Barang</h3>
                 <div class="card-body">
                     @if (count($errors) > 0)
                     <div class="alert alert-danger">
@@ -20,7 +20,7 @@
                     </div>
                     @endif
                     <br>
-                    <form action="{{url('/tambahbarang/proses')}}" method="POST">
+                    <form action="{{ route('pembelian.store') }}" method="POST">
                         @csrf
                         <div class="form-group">
                             <label for="tambahbarang" style="font-size:12pt;">Nama Barang</label><br>
@@ -35,7 +35,6 @@
                             <input type="number" class="form-control" name="Harga">
                         </div>
                         <button type="submit" class="btn btn-primary">Submit</button>
-                        <a href="{{url('/barang')}}" class="btn btn-info">Batal</a>
                     </form>
                 </div>
             </div>

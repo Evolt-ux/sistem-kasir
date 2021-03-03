@@ -8,4 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class beli extends Model
 {
     use HasFactory;
+    protected $table = 'pembelian';
+
+    protected $fillable = [
+        'Tanggal','NamaBarang', 'Jumlah', 'Harga'
+    ];
 }
