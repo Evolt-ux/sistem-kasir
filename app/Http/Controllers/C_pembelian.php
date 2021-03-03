@@ -14,7 +14,8 @@ class C_pembelian extends Controller
     //lihat pembelian
     public function index()
     {
-        return view('pembelian');
+        $tambah = beli::all();
+        return view('/pembelian', compact('tambah'));
     }
 
     //tambah pembelian
@@ -32,7 +33,7 @@ class C_pembelian extends Controller
             'Harga'         => ['required']
         ]);
         beli::create([
-            'Tanggal'        => $request->date('Y-m-d H:i:s'),
+            'Tanggal'        => date('Y-m-d H:i:s'),
             'NamaBarang'     => $request->NamaBarang,
             'Jumlah'         => $request->Jumlah,
             'Harga'          => $request->Harga
@@ -55,8 +56,13 @@ class C_pembelian extends Controller
         //
     }
 
-    public function destroy($id)
+    //hapus pembelian
+    public function destroy($beli)
     {
-        //
+        $beli = beli::where('id',$beli)->first();
+        $beli->delete();
+ 
+        return redirect()->route('pembelian.index')
+                        ->with('success','Pembelian deleted successfully');
     }
 }
