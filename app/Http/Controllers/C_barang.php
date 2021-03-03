@@ -32,14 +32,12 @@ class C_barang extends Controller
       'NamaBarang'    => ['required'],
       'Jumlah'        => ['required'],
       'Harga'         => ['required'],
-      'Diskon'        => ['required'],
       'Kadaluarsa'    => ['required']
     ]);
     Barang::create([
       'NamaBarang'     => $request->NamaBarang,
       'Jumlah'         => $request->Jumlah,
       'Harga'          => $request->Harga,
-      'Diskon'         => $request->Diskon / 100,
       'Kadaluarsa'     => $request->Kadaluarsa
     ]);
     return redirect('/barang');
@@ -58,7 +56,6 @@ class C_barang extends Controller
         'NamaBarang'    => ['required'],
         'Jumlah'        => ['required'],
         'Harga'         => ['required'],
-        'Diskon'        => ['required'],
         'Kadaluarsa'    => ['required']
       ]);
 

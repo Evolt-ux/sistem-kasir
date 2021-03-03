@@ -35,10 +35,6 @@
               <input type="number" class="form-control" value="{{$Barang->Harga}}" name="Harga">
             </div>
             <div class="form-group">
-              <label for="tambahbarang" style="font-size:12pt;">Diskon</label><br>
-              <input type="number" class="form-control" value="{{$Barang->Diskon}}" name="Diskon">
-            </div>
-            <div class="form-group">
               <label for="tambahbarang" style="font-size:12pt;">Kadaluarsa</label><br>
               <input type="date" class="form-control" value="{{$Barang->Kadaluarsa}}" name="Kadaluarsa">
             </div>

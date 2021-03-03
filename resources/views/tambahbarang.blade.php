@@ -34,10 +34,6 @@
               <input type="number" class="form-control" name="Harga">
             </div>
             <div class="form-group">
-              <label for="tambahbarang" style="font-size:12pt;">Diskon</label><br>
-              <input type="number" class="form-control" name="Diskon">
-            </div>
-            <div class="form-group">
               <label for="tambahbarang" style="font-size:12pt;">Kadaluarsa</label><br>
               <input type="date" class="form-control" name="Kadaluarsa">
             </div>

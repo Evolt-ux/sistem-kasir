@@ -17,7 +17,6 @@
                             <th scope="col">Nama Barang</th>
                             <th scope="col">Jumlah</th>
                             <th scope="col">Harga</th>
-                            <th scope="col">Diskon</th>
                             <th scope="col">Tgl Kadaluarsa</th>
                             <th scope="col">Aksi</th>
                         </tr>
@@ -29,7 +28,6 @@
                             <td>{{$T->NamaBarang}}</td>
                             <td>{{$T->Jumlah}}</td>
                             <td>Rp{{$T->Harga}}</td>
-                            <td>{{$T->Diskon}}</td>
                             <td>{{$T->Kadaluarsa}}</td>
                             <td>
                                 <div class="row">
