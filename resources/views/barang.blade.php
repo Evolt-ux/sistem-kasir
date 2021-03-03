@@ -31,7 +31,13 @@
                             <td>Rp{{$T->Harga}}</td>
                             <td>{{$T->Diskon}}</td>
                             <td>{{$T->Kadaluarsa}}</td>
-                            <td><a href="{{ route('barang.edit',$T->id) }}"><i class="far fa-edit"></i></a>&nbsp;&nbsp;<a href="{{ route('barang.destroy',$T->id) }}"><i class="fas fa-trash-alt" style="color: red"></i></a></td>
+                            <td><a href="{{ route('barang.edit',$T->id) }}"><i class="far fa-edit"></i></a>&nbsp;&nbsp;
+                            <form action="{{ route('barang.destroy',$T->id) }}" method="POST">
+                            @csrf
+                            @method('DELETE')
+                            <button type = "submit"><i class="fas fa-trash-alt" style="color: red"></i></button>
+                            </form>
+                            </td>
                         </tr>
                     </tbody>
                     @endforeach
