@@ -4,7 +4,7 @@
 
 @section('content')
 <div class="row">
-    <div class="col-sm-6">
+    <div class="col-sm-5">
         <div class="card">
             <div class="card-body">
                 <div class="container">
@@ -33,61 +33,58 @@
             </div>
         </div>
     </div>
-    <div class="col-sm-6">
+    <div class="col-sm-7">
         <div class="card">
-            <div class="card-body">
-                <h4 class="card-title">Transaction</h4>
-                <table class="table table-hover">
-                    <thead>
-                        <tr>
-                            <th scope="col" rowspan="2">ID</th>
-                            <th scope="col" colspan="2">Periode</th>
-                            <th scope="col" rowspan="2">Qty</th>
-                            <th scope="col" rowspan="2">Disc</th>
-                            <th scope="col" rowspan="2">Total</th>
-                            <th scope="col">-</th>
-                        </tr>
-                        <tr>
-                            <th scope="col">Awal</th>
-                            <th scope="col">Akhir</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <th scope="row">1</th>
-                            <td>Samsung S21 ultra</td>
-                            <td>10.000.00</td>
-                            <td>1</td>
-                            <td>0%</td>
-                            <td>10.000.00</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- search barang end -->
-<div class="row">
-    <!-- Column -->
-
-    <!-- Column -->
-    <!-- Column -->
-    <div class="col-sm-5">
-        <div class="card">
-            <div class="card-body">
-                <h4 class="card-title">Profit yang diterapkan</h4>
-                <div class="text-right">
-                    <h2 class="font-light m-b-0"><i class="ti-arrow-up text-info"></i> $5,000</h2>
-                    <span class="text-muted">Todays Income</span>
-                </div>
-                <span class="text-info">30%</span>
-                <div class="progress">
-                    <div class="progress-bar bg-info" role="progressbar" style="width: 30%; height: 6px;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+            <div class="card-body ml-5">
+                <h4 class="card-title">Diskon</h4>
+                <div class="row">
+                    <div class="col-10">
+                        <table class="table table-sm">
+                            <thead>
+                                <tr height="" align="center">
+                                    <th scope="col" rowspan="2">ID</th>
+                                    <th scope="col" colspan="2">Periode</th>
+                                    <th scope="col" rowspan="2">Nama Barang</th>
+                                    <th scope="col" rowspan="2">Diskon</th>
+                                </tr>
+                                <tr align="center">
+                                    <th scope="col">Awal</th>
+                                    <th scope="col">Akhir</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr align="center">
+                                    <th scope="row">1</th>
+                                    <td>Tgl 1</td>
+                                    <td>Tgl 2</td>
+                                    <td>Kopi</td>
+                                    <td>0%</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="col-2">
+                        <div class="row">
+                            <form action="" method="GET">
+                                <button type="submit" style="border: none; background-color:rgba(255, 0, 0, 0); width:0.1px; outline:none;"><i class="text-primary mt-1 mr-5 fas fa-plus" style="border: solid 1px;padding:7px;font-size:25px; border-radius: 6px;"></i></button>
+                            </form>
+                        </div>
+                        <div class="row">
+                            <form action="" method="GET">
+                                <button type="submit" style="border: none; background-color:rgba(255, 0, 0, 0); width:0.1px; outline:none;"><i class="text-primary mt-1 mr-5 fas fa-edit" style="border: solid 1px;padding:4px;font-size:25px; border-radius: 6px;"></i></button>
+                            </form>
+                        </div>
+                        <div class="row">
+                            <form action="" method="POST">
+                                @csrf
+                                @method('DELETE')
+                                <button type="submit" style="border: none; background-color:rgba(255, 0, 0, 0); width:0.1px; outline:none;"><i class="text-primary mt-1 mr-5 fas fa-trash-alt" style="border: solid 1px;padding:7px;font-size:25px; border-radius: 6px;"></i></button>
+                            </form>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-    <!-- Column -->
 </div>
 @endsection
