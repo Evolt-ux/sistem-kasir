@@ -15,6 +15,11 @@ class CreatePenjualanTable extends Migration
     {
         Schema::create('penjualan', function (Blueprint $table) {
             $table->id();
+            $table->date('Tanggal');
+            $table->string('NamaBarang');
+            $table->integer('Jumlah');
+            $table->integer('Harga');
+            $table->float('Diskon');
             $table->timestamps();
         });
     }

@@ -30,50 +30,86 @@
 <!-- search barang end -->
 <div class="row">
     <!-- Column -->
-    <div class="col-sm-7">
+    <div class="col-sm-8">
         <div class="card">
             <div class="card-body">
-                <h4 class="card-title">Transaction</h4>
+                <h4 class="card-title">Selling Transaction</h4>
                 <table class="table table-hover">
                     <thead>
                         <tr>
                             <th scope="col">ID</th>
-                            <th scope="col">Product Name</th>
-                            <th scope="col">Price</th>
-                            <th scope="col">Qty</th>
-                            <th scope="col">Disc %</th>
+                            <th scope="col">Tanggal</th>
+                            <th scope="col">Nama Barang</th>
+                            <th scope="col">Jumlah</th>
+                            <th scope="col">Harga</th>
+                            <th scope="col">Diskon</th>
                             <th scope="col">Total</th>
-                            <th scope="col">-</th>
+                            <th scope="col">Aksi</th>
                         </tr>
                     </thead>
                     <tbody>
+                    @foreach($tambah as $T)
                         <tr>
-                            <th scope="row">1</th>
-                            <td>Samsung S21 ultra</td>
-                            <td>10.000.00</td>
-                            <td>1</td>
-                            <td>0%</td>
-                            <td>10.000.00</td>
-                            <td><i class="fas fa-trash-alt"></i></td>
+                            <td>{{$T->id}}</td>
+                            <td>{{$T->Tanggal}}</td>
+                            <td>{{$T->NamaBarang}}</td>
+                            <td>{{$T->Jumlah}}</td>
+                            <td>Rp{{$T->Harga}}</td>
+                            <td>{{$T->Diskon}}</td>
+                            <td>Rp{{$T->Harga*$T->Jumlah}}</td>
+                            <td>
+                                <div class="row">
+                                    <div class="col">
+                                        <form action="{{ route('penjualan.destroy',$T->id) }}" method="POST">
+                                            @csrf
+                                            @method('DELETE')
+                                            <button class="button1" type="submit" style="border: none; background-color:rgba(255, 0, 0, 0);"><i class="fas fa-trash-alt" style="color: red;"></i></button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </td>
                         </tr>
                     </tbody>
+                    @endforeach
                 </table>
             </div>
         </div>
     </div>
-    <!-- Column -->
-    <!-- Column -->
-    <div class="col-sm-5">
+    <div class="col-sm-4">
         <div class="card">
             <div class="card-body">
-                <h4 class="card-title">Nota</h4>
-                <div class="text-right">
-                    <h2 class="font-light m-b-0"><i class="ti-arrow-up text-info"></i> $5,000</h2>
-                    <span class="text-muted">Todays Income</span>
-                </div>
-                <span class="text-info">30%</span>
-                <div class="progress">
-                    <div class="progress-bar bg-info" role="progressbar" style="width: 30%; height: 6px;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                <h3 class="card-title">Penjualan Barang</h3>
+                <div class="card-body">
+                    @if (count($errors) > 0)
+                    <div class="alert alert-danger">
+                        <ul>
+                            @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
+                    </div>
+                    @endif
+                    <br>
+                    <form action="{{ route('penjualan.store') }}" method="POST">
+                        @csrf
+                        <div class="form-group">
+                            <label for="tambahbarang" style="font-size:12pt;">Nama Barang</label><br>
+                            <input type="text" class="form-control" name="NamaBarang">
+                        </div>
+                        <div class="form-group">
+                            <label for="tambahbarang" style="font-size:12pt;">Jumlah</label><br>
+                            <input type="number" class="form-control" name="Jumlah">
+                        </div>
+                        <div class="form-group">
+                            <label for="tambahbarang" style="font-size:12pt;">Harga</label><br>
+                            <input type="number" class="form-control" name="Harga">
+                        </div>
+                        <div class="form-group">
+                            <label for="tambahbarang" style="font-size:12pt;">Diskon</label><br>
+                            <input type="number" class="form-control" name="Diskon">
+                        </div>
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </form>
                 </div>
             </div>
         </div>

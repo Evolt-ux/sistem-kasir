@@ -19,11 +19,6 @@ class C_pembelian extends Controller
     }
 
     //tambah pembelian
-    public function create()
-    {
-        return view('pembelian');
-    }
-
     public function store(Request $request)
     {
         $tambah = beli::all();

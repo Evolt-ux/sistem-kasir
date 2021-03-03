@@ -8,7 +8,7 @@
     <div class="col-sm-8">
         <div class="card">
             <div class="card-body">
-                <h4 class="card-title">Transaction</h4>
+                <h4 class="card-title">Buying Transaction</h4>
                 <table class="table table-hover">
                     <thead>
                         <tr>
