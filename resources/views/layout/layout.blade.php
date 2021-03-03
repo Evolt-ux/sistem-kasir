@@ -108,7 +108,7 @@
                         <li class="nav-item dropdown">
                             <div class="dropdown show">
                                 <a class=" dropdown-toggle  " href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    <p class="h6 mt-2 mr-5"><span style="color:white; border:solid 2px; padding: 8px 10px; border-radius: 20px;">Budi Karya Budi Karya</span></p>
+                                    <p class="h6 mt-2 mr-5"><span style="color:white; border:solid 2px; padding: 8px 10px; border-radius: 20px;">Budi Karya Budi Karya<i class="fas fa-chevron-down pl-2"></i></span></p>
                                 </a>
 
                                 <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
