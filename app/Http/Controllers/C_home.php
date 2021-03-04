@@ -26,16 +26,17 @@ class C_home extends Controller
             'NamaBarang'   => ['required'],
             'Diskon'       => ['required']
         ]);
+        $idPeriode = DB::table('periode')->orderBy('PeriodeID', 'desc')->value('PeriodeID');
         periode::create([
             'Awal'           => $request->Awal,
             'Akhir'          => $request->Akhir
         ]);
         $idPeriode = DB::table('periode')->orderBy('PeriodeID', 'desc')->value('PeriodeID');
-        dd($idPeriode);
         diskon::create([
             'NamaBarang'    => $request->NamaBarang,
-            'Diskon'        => $request->Diskon/100,
-            'PeriodeID'     => $idPeriode
+            'PeriodeID'     => $idPeriode,
+            'Diskon'        => $request->Diskon / 100
+
         ]);
         return redirect('/');
     }
@@ -49,10 +50,10 @@ class C_home extends Controller
     public function edit($id)
     {
         $home = DB::table('periode')
-                ->join('diskon','diskon.DiskonID', '=', 'periode.PeriodeID')
-                ->select('periode.*', 'diskon.*')
-                ->where('periode.PeriodeID', '=', $id)
-                ->first();
+            ->join('diskon', 'diskon.DiskonID', '=', 'periode.PeriodeID')
+            ->select('periode.*', 'diskon.*')
+            ->where('periode.PeriodeID', '=', $id)
+            ->first();
         return view('ubahdiskon', compact('home'));
     }
 
@@ -64,20 +65,21 @@ class C_home extends Controller
     //         'NamaBarang'    => ['required'],
     //         'Diskon'        => ['required']
     //       ]);
-    
+
     //       $home->update($request->all());
-    
+
     //       return redirect()->route('home.index')
     //                       ->with('success','Home updated successfully');
     // }
 
     public function destroy($hapus)
     {
-        $periode = periode::where('PeriodeID',$hapus)->first();
-        $periode->delete();
-        $diskon = diskon::where('PeriodeID',$hapus)->first();
-        $diskon->delete();
-        return redirect()->route('index')
-                        ->with('success','Barang deleted successfully');
+        // $periode = periode::where('PeriodeID', $hapus)->first();
+        periode::where('PeriodeID', $hapus)->delete();
+        // $periode->delete();
+        // $diskon = diskon::where('PeriodeID', $hapus)->first();
+        // $diskon->delete();
+        return redirect('/')
+            ->with('success', 'Barang deleted successfully');
     }
 }

@@ -9,8 +9,9 @@ class periode extends Model
 {
     use HasFactory;
     protected $table = 'periode';
+    protected $PrimaryKey = 'PeriodeID';
 
     protected $fillable = [
-        'Awal','Akhir'
+        'Awal', 'Akhir'
     ];
 }
