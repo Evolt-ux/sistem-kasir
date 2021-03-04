@@ -19,7 +19,7 @@
           </div>
           @endif
           <br>
-          <form action="" method="POST">
+          <form action="{{ route('home.update',$home->PeriodeID) }}" method="POST">
             @csrf
             @method('PUT')
             <div class="form-group">
@@ -30,13 +30,13 @@
               <label for="ubahdiskon" style="font-size:12pt;">Akhir</label><br>
               <input type="date" class="form-control" value="{{$home->Akhir}}" name="Akhir">
             </div>
-            <div class="form-group">
+            <!-- <div class="form-group">
               <label for="ubahdiskon" style="font-size:12pt;">Nama Barang</label><br>
               <input type="text" class="form-control" value="{{$home->NamaBarang}}" name="NamaBarang">
-            </div>
+            </div> -->
             <div class="form-group">
-              <label for="ubahdiskon" value="$home->NamaBarang" style="font-size:12pt;">Diskon</label><br>
-              <input type="number" class="form-control" value="{{$home->Diskon}}" name="Diskon">
+              <label for="ubahdiskon" value="$home->NamaBarang" style="font-size:12pt;">Diskon %</label><br>
+              <input type="number" class="form-control" value="{{$home->Diskon*100}}" name="Diskon">
             </div>
             <button type="submit" class="btn btn-primary">Update</button>
             <a href="{{url('/')}}" class="btn btn-info">Batal</a>
