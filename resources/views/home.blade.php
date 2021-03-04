@@ -44,9 +44,9 @@
                                 <tr height="" align="center">
                                     <th scope="col" rowspan="2">No</th>
                                     <th scope="col" colspan="2">Periode</th>
-                                    <!-- <th scope="col" rowspan="2">Nama Barang</th> -->
                                     <th scope="col" rowspan="2">Diskon</th>
                                     <th rowspan="2">Detail</th>
+                                    <th scope="col" rowspan="2">Aksi</th>
                                 </tr>
                                 <tr align="center">
                                     <th scope="col">Awal</th>
@@ -54,14 +54,25 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach($diskon as $d)
+                                @foreach($home as $h)
                                 <tr align="center">
                                     <td>{{ $loop->iteration }}</td>
-                                    <td>{{$d->Awal}}</td>
-                                    <td>{{$d->Akhir}}</td>
-                                    <!-- <td>{{$d->NamaBarang}}</td> -->
-                                    <td>{{$d->Diskon*100}}%</td>
+                                    <td>{{$h->Awal}}</td>
+                                    <td>{{$h->Akhir}}</td>
+                                    <td>{{$h->Diskon*100}}%</td>
                                     <td><a href=""><i class="fas fa-info-circle"></i></a></td>
+                                    <td>
+                                        <div class="row">
+                                            <div class="col">
+                                                <form action="{{ route('home.destroy',$h->PeriodeID) }}" method="POST">
+                                                    <a href="{{ route('home.edit',$h->PeriodeID) }}"><i class="far fa-edit"></i></a>
+                                                    @csrf
+                                                    @method('DELETE')
+                                                    <button class="button1" type="submit" style="border: none; background-color:rgba(255, 0, 0, 0); position: absolute; width:0.1px; outline:none;"><i class="d-inline fas fa-trash-alt" style="color: red;"></i></button>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </td>
                                 </tr>
                             </tbody>
                             @endforeach
@@ -69,11 +80,11 @@
                     </div>
                     <div class="col-2">
                         <div class="row">
-                            <form action="{{ route('diskon.create') }}" method="GET">
+                            <form action="{{ route('home.create') }}" method="GET">
                                 <button type="submit" style="border: none; background-color:rgba(255, 0, 0, 0); width:0.1px; outline:none;"><i class="text-primary mt-1 mr-5 fas fa-plus" style="border: solid 1px;padding:7px;font-size:25px; border-radius: 6px;"></i></button>
                             </form>
                         </div>
-                        <div class="row">
+                        <!-- <div class="row">
                             <form action="" method="GET">
                                 <button type="submit" style="border: none; background-color:rgba(255, 0, 0, 0); width:0.1px; outline:none;"><i class="text-primary mt-1 mr-5 fas fa-edit" style="border: solid 1px;padding:4px;font-size:25px; border-radius: 6px;"></i></button>
                             </form>
@@ -84,7 +95,7 @@
                                 @method('DELETE')
                                 <button type="submit" style="border: none; background-color:rgba(255, 0, 0, 0); width:0.1px; outline:none;"><i class="text-primary mt-1 mr-5 fas fa-trash-alt" style="border: solid 1px;padding:7px;font-size:25px; border-radius: 6px;"></i></button>
                             </form>
-                        </div>
+                        </div> -->
                     </div>
                 </div>
             </div>

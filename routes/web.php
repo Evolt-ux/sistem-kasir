@@ -3,8 +3,11 @@
 use App\Http\Controllers\C_barang;
 use App\Http\Controllers\C_pembelian;
 use App\Http\Controllers\C_penjualan;
+use App\Http\Controllers\C_home;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\DB;
 use App\Models\diskon;
+use App\Models\periode;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,11 +21,14 @@ use App\Models\diskon;
 */
 
 Route::get('/', function () {
-    $diskon = diskon::all();
-    return view('home', compact('diskon'));
+    $home = DB::table('periode')
+    ->join('diskon','diskon.DiskonID', '=', 'periode.PeriodeID')
+    ->select('periode.*', 'diskon.Diskon')
+    ->get();
+    return view('home', compact('home'));
 });
 // Route::get('/', [C_home::class]);
 Route::resource('penjualan', C_penjualan::class);
 Route::resource('pembelian', C_pembelian::class);
 Route::resource('barang', C_barang::class);
-Route::resource('diskon', C_home::class);
+Route::resource('home', C_home::class);

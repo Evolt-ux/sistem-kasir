@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateDiskonTable extends Migration
+class CreatePeriodeTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,10 @@ class CreateDiskonTable extends Migration
      */
     public function up()
     {
-        Schema::create('diskon', function (Blueprint $table) {
-            $table->id('DiskonID');
-            $table->string('NamaBarang');
-            $table->float('Diskon');
+        Schema::create('periode', function (Blueprint $table) {
+            $table->id('PeriodeID');
+            $table->date('Awal');
+            $table->date('Akhir');
             $table->timestamps();
         });
     }
@@ -28,6 +28,6 @@ class CreateDiskonTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('diskon');
+        Schema::dropIfExists('periode');
     }
 }

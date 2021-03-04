@@ -7,7 +7,7 @@
   <div class="col-sm-8">
     <div class="card">
       <div class="card-body">
-        <h3 class="card-title">Tambah Barang</h3>
+        <h3 class="card-title">Tambah Diskon</h3>
         <div class="card-body">
           @if (count($errors) > 0)
           <div class="alert alert-danger">
@@ -19,15 +19,15 @@
           </div>
           @endif
           <br>
-          <form action="{{ route('diskon.store') }}" method="POST">
+          <form action="{{ route('home.store') }}" method="POST">
             @csrf
             <div class="form-group">
               <label for="tambahdiskon" style="font-size:12pt;">Periode Awal</label><br>
-              <input type="date" class="form-control" name="awal">
+              <input type="date" class="form-control" name="Awal">
             </div>
             <div class="form-group">
               <label for="tambahdiskon" style="font-size:12pt;">Periode Akhir</label><br>
-              <input type="date" class="form-control" name="akhir">
+              <input type="date" class="form-control" name="Akhir">
             </div>
             <div class="form-group">
               <label for="tambahdiskon" style="font-size:12pt;">Nama Barang</label><br>
@@ -35,7 +35,7 @@
             </div>
             <div class="form-group">
               <label for="tambahdiskon" style="font-size:12pt;">Diskon</label><br>
-              <input type="number" class="form-control" name="diskon">
+              <input type="number" class="form-control" name="Diskon">
             </div>
             <button type="submit" class="btn btn-primary">Submit</button>
             <a href="{{url('/')}}" class="btn btn-info">Batal</a>

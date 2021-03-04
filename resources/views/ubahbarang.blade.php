@@ -4,7 +4,7 @@
 <!-- search barang end -->
 <div class="row">
   <!-- Column -->
-  <div class="col-sm-10">
+  <div class="col-sm-8">
     <div class="card">
       <div class="card-body">
         <h3 class="card-title">Update Barang</h3>
