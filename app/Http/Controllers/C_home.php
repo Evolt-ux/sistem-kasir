@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\DB;
 use App\Order;
@@ -14,7 +15,7 @@ class C_home extends Controller
     public function index()
     {
         $tambah = diskon::all();
-        return view('/', compact('tambah'));
+        return view('home', compact('tambah'));
     }
 
     //tambah diskon

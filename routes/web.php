@@ -4,6 +4,7 @@ use App\Http\Controllers\C_barang;
 use App\Http\Controllers\C_pembelian;
 use App\Http\Controllers\C_penjualan;
 use Illuminate\Support\Facades\Route;
+use App\Models\diskon;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,9 +18,10 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('home');
+    $tambah = diskon::all();
+    return view('home', compact('tambah'));
 });
-Route::get('/', [C_home::class]);
+// Route::get('/', [C_home::class]);
 Route::resource('penjualan', C_penjualan::class);
 Route::resource('pembelian', C_pembelian::class);
 Route::resource('barang', C_barang::class);

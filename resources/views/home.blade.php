@@ -53,13 +53,13 @@
                                 </tr>
                             </thead>
                             <tbody>
-                            @foreach($tambah as $T)
+                                @foreach($tambah as $T)
                                 <tr align="center">
                                     <td>{{$T->id}}</td>
                                     <td>{{$T->Awal}}</td>
                                     <td>{{$T->Akhir}}</td>
                                     <td>{{$T->NamaBarang}}</td>
-                                    <td>{{$T->Diskon}}</td>
+                                    <td>{{$T->Diskon*100}}%</td>
                                 </tr>
                             </tbody>
                             @endforeach
