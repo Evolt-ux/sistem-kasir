@@ -23,19 +23,19 @@
             @csrf
             @method('PUT')
             <div class="form-group">
-              <label for="tambahbarang" style="font-size:12pt;">Nama Barang</label><br>
+              <label for="ubahbarang" style="font-size:12pt;">Nama Barang</label><br>
               <input type="text" class="form-control" value="{{$Barang->NamaBarang}}" name="NamaBarang">
             </div>
             <div class="form-group">
-              <label for="tambahbarang" value="$Barang->NamaBarang" style="font-size:12pt;">Jumlah</label><br>
+              <label for="ubahbarang" value="$Barang->NamaBarang" style="font-size:12pt;">Jumlah</label><br>
               <input type="number" class="form-control" value="{{$Barang->Jumlah}}" name="Jumlah">
             </div>
             <div class="form-group">
-              <label for="tambahbarang" style="font-size:12pt;">Harga</label><br>
+              <label for="ubahbarang" style="font-size:12pt;">Harga</label><br>
               <input type="number" class="form-control" value="{{$Barang->Harga}}" name="Harga">
             </div>
             <div class="form-group">
-              <label for="tambahbarang" style="font-size:12pt;">Kadaluarsa</label><br>
+              <label for="ubahbarang" style="font-size:12pt;">Kadaluarsa</label><br>
               <input type="date" class="form-control" value="{{$Barang->Kadaluarsa}}" name="Kadaluarsa">
             </div>
             <button type="submit" class="btn btn-primary">Update</button>

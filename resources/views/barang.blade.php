@@ -23,19 +23,19 @@
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach($tambah as $T)
+                        @foreach($barang as $B)
                         <tr>
-                            <td>{{$T->id}}</td>
-                            <td>{{$T->Tanggal}}</td>
-                            <td>{{$T->NamaBarang}}</td>
-                            <td>{{$T->Jumlah}}</td>
-                            <td>Rp{{$T->Harga}}</td>
-                            <td>{{$T->Kadaluarsa}}</td>
+                            <td>{{$B->id}}</td>
+                            <td>{{$B->Tanggal}}</td>
+                            <td>{{$B->NamaBarang}}</td>
+                            <td>{{$B->Jumlah}}</td>
+                            <td>Rp{{$B->Harga}}</td>
+                            <td>{{$B->Kadaluarsa}}</td>
                             <td>
                                 <div class="row">
                                     <div class="col">
-                                        <form action="{{ route('barang.destroy',$T->id) }}" method="POST">
-                                            <a href="{{ route('barang.edit',$T->id) }}"><i class="far fa-edit"></i></a>
+                                        <form action="{{ route('barang.destroy',$B->id) }}" method="POST">
+                                            <a href="{{ route('barang.edit',$B->id) }}"><i class="far fa-edit"></i></a>
                                             @csrf
                                             @method('DELETE')
                                             <button class="button1" type="submit" style="border: none; background-color:rgba(255, 0, 0, 0); position: absolute; width:0.1px; outline:none;"><i class="d-inline fas fa-trash-alt" style="color: red;"></i></button>

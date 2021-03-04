@@ -55,7 +55,7 @@
                             <td>{{$T->NamaBarang}}</td>
                             <td>{{$T->Jumlah}}</td>
                             <td>Rp{{$T->Harga}}</td>
-                            <td>{{$T->Diskon}}</td>
+                            <td>{{$T->Diskon*100}}%</td>
                             <td>Rp{{$T->Harga*$T->Jumlah}}</td>
                             <td>
                                 <div class="row">

@@ -21,7 +21,6 @@ class C_penjualan extends Controller
     //tambah penjualan
     public function store(Request $request)
     {
-        $tambah = jual::all();
         $this->validate($request, [
             'NamaBarang'    => ['required'],
             'Jumlah'        => ['required'],

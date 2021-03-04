@@ -21,7 +21,6 @@ class C_pembelian extends Controller
     //tambah pembelian
     public function store(Request $request)
     {
-        $tambah = beli::all();
         $this->validate($request, [
             'NamaBarang'    => ['required'],
             'Jumlah'        => ['required'],

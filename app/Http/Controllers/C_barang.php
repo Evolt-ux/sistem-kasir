@@ -16,8 +16,8 @@ class C_barang extends Controller
   //lihat barang
   public function index()
   {
-    $tambah = Barang::all();
-    return view('/barang', compact('tambah'));
+    $barang = Barang::all();
+    return view('/barang', compact('barang'));
   }
 
   //tambah barang
@@ -27,7 +27,6 @@ class C_barang extends Controller
   }
   public function store(Request $request)
   {
-    $tambah = Barang::all();
     $this->validate($request, [
       'NamaBarang'    => ['required'],
       'Jumlah'        => ['required'],
@@ -67,10 +66,10 @@ class C_barang extends Controller
   }
     
   //hapus barang
-  public function destroy($Barang)
+  public function destroy($hapus)
     {
-        $Barang = Barang::where('id',$Barang)->first();
-        $Barang->delete();
+        $hapus = Barang::where('id',$hapus)->first();
+        $hapus->delete();
  
         return redirect()->route('barang.index')
                         ->with('success','Barang deleted successfully');
