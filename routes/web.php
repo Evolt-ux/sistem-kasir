@@ -19,6 +19,8 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('home');
 });
+Route::get('/', [C_home::class]);
 Route::resource('penjualan', C_penjualan::class);
 Route::resource('pembelian', C_pembelian::class);
 Route::resource('barang', C_barang::class);
+Route::resource('diskon', C_home::class);

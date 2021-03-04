@@ -1,6 +1,6 @@
 @extends('layout.layout')
 
-@section('title', 'Penjualan')
+@section('title')
 
 @section('content')
 <div class="row">
@@ -53,19 +53,21 @@
                                 </tr>
                             </thead>
                             <tbody>
+                            @foreach($tambah as $T)
                                 <tr align="center">
-                                    <th scope="row">1</th>
-                                    <td>Tgl 1</td>
-                                    <td>Tgl 2</td>
-                                    <td>Kopi</td>
-                                    <td>0%</td>
+                                    <td>{{$T->id}}</td>
+                                    <td>{{$T->Awal}}</td>
+                                    <td>{{$T->Akhir}}</td>
+                                    <td>{{$T->NamaBarang}}</td>
+                                    <td>{{$T->Diskon}}</td>
                                 </tr>
                             </tbody>
+                            @endforeach
                         </table>
                     </div>
                     <div class="col-2">
                         <div class="row">
-                            <form action="" method="GET">
+                            <form action="{{ route('diskon.create') }}" method="GET">
                                 <button type="submit" style="border: none; background-color:rgba(255, 0, 0, 0); width:0.1px; outline:none;"><i class="text-primary mt-1 mr-5 fas fa-plus" style="border: solid 1px;padding:7px;font-size:25px; border-radius: 6px;"></i></button>
                             </form>
                         </div>
