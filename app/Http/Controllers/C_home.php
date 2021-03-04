@@ -12,11 +12,11 @@ use Illuminate\Http\Request;
 class C_home extends Controller
 {
     //lihat diskon
-    public function index()
-    {
-        $tambah = diskon::all();
-        return view('home', compact('tambah'));
-    }
+    // public function index()
+    // {
+    //     $tambah = diskon::all();
+    //     return view('home', compact('tambah'));
+    // }
 
     //tambah diskon
     public function create()

@@ -42,10 +42,11 @@
                         <table class="table table-sm">
                             <thead>
                                 <tr height="" align="center">
-                                    <th scope="col" rowspan="2">ID</th>
+                                    <th scope="col" rowspan="2">No</th>
                                     <th scope="col" colspan="2">Periode</th>
-                                    <th scope="col" rowspan="2">Nama Barang</th>
+                                    <!-- <th scope="col" rowspan="2">Nama Barang</th> -->
                                     <th scope="col" rowspan="2">Diskon</th>
+                                    <th rowspan="2">Detail</th>
                                 </tr>
                                 <tr align="center">
                                     <th scope="col">Awal</th>
@@ -53,13 +54,14 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach($tambah as $T)
+                                @foreach($diskon as $d)
                                 <tr align="center">
-                                    <td>{{$T->id}}</td>
-                                    <td>{{$T->Awal}}</td>
-                                    <td>{{$T->Akhir}}</td>
-                                    <td>{{$T->NamaBarang}}</td>
-                                    <td>{{$T->Diskon*100}}%</td>
+                                    <td>{{ $loop->iteration }}</td>
+                                    <td>{{$d->Awal}}</td>
+                                    <td>{{$d->Akhir}}</td>
+                                    <!-- <td>{{$d->NamaBarang}}</td> -->
+                                    <td>{{$d->Diskon*100}}%</td>
+                                    <td><a href=""><i class="fas fa-info-circle"></i></a></td>
                                 </tr>
                             </tbody>
                             @endforeach

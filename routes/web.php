@@ -18,8 +18,8 @@ use App\Models\diskon;
 */
 
 Route::get('/', function () {
-    $tambah = diskon::all();
-    return view('home', compact('tambah'));
+    $diskon = diskon::all();
+    return view('home', compact('diskon'));
 });
 // Route::get('/', [C_home::class]);
 Route::resource('penjualan', C_penjualan::class);
