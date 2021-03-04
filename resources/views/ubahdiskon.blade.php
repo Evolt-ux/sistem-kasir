@@ -19,7 +19,7 @@
           </div>
           @endif
           <br>
-          <form action="{{ route('home.update',$home->Periode.ID) }}" method="POST">
+          <form action="" method="POST">
             @csrf
             @method('PUT')
             <div class="form-group">
