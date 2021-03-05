@@ -44,7 +44,6 @@
                                 <tr height="" align="center">
                                     <th scope="col" rowspan="2">No</th>
                                     <th scope="col" colspan="2">Periode</th>
-                                    <th scope="col" rowspan="2">Diskon</th>
                                     <th rowspan="2">Detail</th>
                                     <th scope="col" rowspan="2">Aksi</th>
                                 </tr>
@@ -59,7 +58,6 @@
                                     <td>{{ $loop->iteration }}</td>
                                     <td>{{$h->Awal}}</td>
                                     <td>{{$h->Akhir}}</td>
-                                    <td>{{$h->Diskon*100}}%</td>
                                     <td><a href=""><i class="fas fa-info-circle"></i></a></td>
                                     <td>
                                         <div class="row">

@@ -21,13 +21,9 @@ use App\Models\periode;
 */
 
 Route::get('/', function () {
-    $home = DB::table('periode')
-    ->join('diskon','diskon.DiskonID', '=', 'periode.PeriodeID')
-    ->select('periode.*', 'diskon.Diskon')
-    ->get();
+    $home = periode::all();
     return view('home', compact('home'));
 });
-// Route::get('/', [C_home::class]);
 Route::resource('penjualan', C_penjualan::class);
 Route::resource('pembelian', C_pembelian::class);
 Route::resource('barang', C_barang::class);

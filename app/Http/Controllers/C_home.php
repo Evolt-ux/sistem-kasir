@@ -26,18 +26,35 @@ class C_home extends Controller
             'NamaBarang'   => ['required'],
             'Diskon'       => ['required']
         ]);
-        $idPeriode = DB::table('periode')->orderBy('PeriodeID', 'desc')->value('PeriodeID');
-        periode::create([
-            'Awal'           => $request->Awal,
-            'Akhir'          => $request->Akhir
-        ]);
-        $idPeriode = DB::table('periode')->orderBy('PeriodeID', 'desc')->value('PeriodeID');
-        diskon::create([
-            'NamaBarang'    => $request->NamaBarang,
-            'PeriodeID'     => $idPeriode,
-            'Diskon'        => $request->Diskon / 100
+        $cek = DB::table('periode')
+            ->where('Awal', $request->Awal)
+            ->where('Akhir', $request->Akhir)
+            ->get();
+        if (count($cek) == 0) {
+            periode::create([
+                'Awal'           => $request->Awal,
+                'Akhir'          => $request->Akhir
+            ]);
+            $idPeriode = DB::table('periode')->orderBy('PeriodeID', 'desc')->value('PeriodeID');
+            diskon::create([
+                'NamaBarang'    => $request->NamaBarang,
+                'PeriodeID'     => $idPeriode,
+                'Diskon'        => $request->Diskon / 100
 
-        ]);
+            ]);
+        } elseif (count($cek) > 0) {
+            $idPeriode = DB::table('periode')
+                ->select('PeriodeID')
+                ->where('Awal', $request->Awal)
+                ->where('Akhir', $request->Akhir)
+                ->first();
+            diskon::create([
+                'NamaBarang'    => $request->NamaBarang,
+                'PeriodeID'     => $idPeriode->PeriodeID,
+                'Diskon'        => $request->Diskon / 100
+
+            ]);
+        }
         return redirect('/');
     }
 
@@ -49,28 +66,37 @@ class C_home extends Controller
     //ubah diskon
     public function edit($id)
     {
-        $home = DB::table('periode')
-            ->join('diskon', 'diskon.DiskonID', '=', 'periode.PeriodeID')
+        $data = DB::table('periode')
+            ->join('diskon', 'diskon.PeriodeID', '=', 'periode.PeriodeID')
             ->select('periode.*', 'diskon.*')
             ->where('periode.PeriodeID', '=', $id)
             ->first();
-        return view('ubahdiskon', compact('home'));
+        return view('ubahdiskon', compact('data'));
     }
 
-    // public function update(Request $request, periode $home, diskon $home)
-    // {
-    //     $request->validate([
-    //         'Awal'          => ['required'],
-    //         'Akhir'         => ['required'],
-    //         'NamaBarang'    => ['required'],
-    //         'Diskon'        => ['required']
-    //       ]);
+    public function update(Request $request, $id)
+    {
+        $request->validate([
+            'Awal'          => ['required'],
+            'Akhir'         => ['required'],
+            'Diskon'        => ['required']
+        ]);
+        DB::table('periode')
+            ->where('PeriodeID', $id)
+            ->update([
+                'Awal' => $request->Awal,
+                'Akhir' => $request->Akhir
+            ]);
+        return redirect('/')->with('success', 'Home updated successfully');
 
-    //       $home->update($request->all());
+        // periode::where('PeriodeID', $request->PeriodeID)->update([
+        //     'Awal' => $request->Awal,
+        //     'Akhir' => $request->Akhir
+        // ]);
+        // $periode->update($request->all());
 
-    //       return redirect()->route('home.index')
-    //                       ->with('success','Home updated successfully');
-    // }
+
+    }
 
     public function destroy($hapus)
     {
