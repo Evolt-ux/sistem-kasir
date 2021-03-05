@@ -15,7 +15,7 @@ class AddFkToDiskon extends Migration
     {
         Schema::table('diskon', function (Blueprint $table) {
             $table->unsignedBigInteger('PeriodeID');
-            $table->foreign('PeriodeID')->references('PeriodeID')->on('periode');
+            $table->foreign('PeriodeID')->references('PeriodeID')->on('periode')->onUpdate('cascade')->onDelete('cascade');;
         });
     }
 

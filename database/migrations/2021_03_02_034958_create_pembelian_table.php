@@ -14,7 +14,7 @@ class CreatePembelianTable extends Migration
     public function up()
     {
         Schema::create('pembelian', function (Blueprint $table) {
-            $table->id();
+            $table->id('PembelianID');
             $table->date('Tanggal');
             $table->string('NamaBarang');
             $table->integer('Jumlah');

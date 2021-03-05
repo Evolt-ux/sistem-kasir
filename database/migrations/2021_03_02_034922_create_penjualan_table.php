@@ -14,7 +14,7 @@ class CreatePenjualanTable extends Migration
     public function up()
     {
         Schema::create('penjualan', function (Blueprint $table) {
-            $table->id();
+            $table->id('PenjualanID');
             $table->date('Tanggal');
             $table->string('NamaBarang');
             $table->integer('Jumlah');
