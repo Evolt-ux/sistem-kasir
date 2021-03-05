@@ -9,8 +9,14 @@ class beli extends Model
 {
     use HasFactory;
     protected $table = 'pembelian';
+    protected $PrimaryKey = 'PembelianID';
 
     protected $fillable = [
-        'Tanggal','NamaBarang', 'Jumlah', 'Harga'
+        'Tanggal', 'NamaBarang', 'Jumlah', 'Harga'
     ];
+
+    public function barang()
+    {
+        return $this->belongsToMany(Barang::class);
+    }
 }
